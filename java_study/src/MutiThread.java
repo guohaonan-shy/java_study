@@ -5,4 +5,16 @@ public class MutiThread implements Callable<String> {
     public String call() throws Exception {
         return "start";
     }
+
+    public static int max(int a, int... b) {
+        int res = a;
+        for (int i : b) {
+            if(i > res) {
+                res = i;
+            }
+        }
+        return res;
+
+    }
+
 }

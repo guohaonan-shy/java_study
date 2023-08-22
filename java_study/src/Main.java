@@ -1,30 +1,58 @@
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 public class Main {
 
-    abstract static class TestNode {
-        public TestNode prev;
-    }
+//    abstract static class TestNode {
+//        public TestNode prev;
+//    }
+//
+//    private static volatile TestNode head;
 
-    private static volatile TestNode head;
+    public static void main(String[] args) throws IOException {
 
-    public static void main(String[] args) throws InterruptedException {
+//        ！！！type... 编译器会处理成type[]数组
+//        int res = MutiThread.max(1, 2,3,4);
+//        System.out.println(res);
+        byte[] input = new byte[4];
 
-        boolean first = false;
-        TestNode pred = null, node = null;                // predecessor of node when enqueued
+        System.in.read(input);
 
-        System.out.println(head);
+        int res = Integer.parseInt(new String(input).trim());
+        System.out.println(res);
+//        switch 语句必须在每个case之后添加break；否则，命中第一个case条件之后，剩余所有的条件都会被执行
+        switch(res) {
+            case 1:
+                System.out.println("1");
+//                break;
+            case 2:
+                System.out.println("2");
+//                break;
+            default:
+                System.out.println("default");
+//                break;
+        }
+//        int[] testList = new int[100];
+//        Class<?> classRes = testList.getClass();
+//        System.out.println(classRes);
+
+//        boolean first = false;
+//        TestNode pred = null, node = null;                // predecessor of node when enqueued
+//
+//        System.out.println(head);
         // 看了遍编译之后的javac，发现if条件是一个一个执行的，对于全&运算，一个不满足，后面不会执行
-        System.out.println(!first && (pred = (node == null) ? null : node.prev) != null && !(first = (head == pred)));
+//        System.out.println(!first && (pred = (node == null) ? null : node.prev) != null && !(first = (head == pred)));
 //        if (first = (head == pred)) {
 //            System.out.println(first);
 //        }
-        System.out.println(head == pred);
-        System.out.println(first);
-        System.out.println(pred);
-        System.out.println(node);
+//        System.out.println(head == pred);
+//        System.out.println(first);
+//        System.out.println(pred);
+//        System.out.println(node);
 
 //        Thread threadA =  new Thread(() -> {
 //            try {
