@@ -15,27 +15,30 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
+        System.out.println(MutiThread.GetBinaryExpression(1.1));
+        System.out.println(MutiThread.GetBinaryExpression(1.234242323));
+
 //        ！！！type... 编译器会处理成type[]数组
 //        int res = MutiThread.max(1, 2,3,4);
+////        System.out.println(res);
+//        byte[] input = new byte[4];
+//
+//        System.in.read(input);
+//
+//        int res = Integer.parseInt(new String(input).trim());
 //        System.out.println(res);
-        byte[] input = new byte[4];
-
-        System.in.read(input);
-
-        int res = Integer.parseInt(new String(input).trim());
-        System.out.println(res);
-//        switch 语句必须在每个case之后添加break；否则，命中第一个case条件之后，剩余所有的条件都会被执行
-        switch(res) {
-            case 1:
-                System.out.println("1");
-//                break;
-            case 2:
-                System.out.println("2");
-//                break;
-            default:
-                System.out.println("default");
-//                break;
-        }
+////        switch 语句必须在每个case之后添加break；否则，命中第一个case条件之后，剩余所有的条件都会被执行
+//        switch(res) {
+//            case 1:
+//                System.out.println("1");
+////                break;
+//            case 2:
+//                System.out.println("2");
+////                break;
+//            default:
+//                System.out.println("default");
+////                break;
+//        }
 //        int[] testList = new int[100];
 //        Class<?> classRes = testList.getClass();
 //        System.out.println(classRes);

@@ -17,4 +17,12 @@ public class MutiThread implements Callable<String> {
 
     }
 
+    public static String GetBinaryExpression(float a) {
+        return Integer.toBinaryString(Float.floatToIntBits(a));
+    }
+
+    public static String GetBinaryExpression(double a) {
+        return Long.toBinaryString(Double.doubleToLongBits(a));
+    }
+
 }
