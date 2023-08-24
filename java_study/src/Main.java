@@ -5,18 +5,41 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
-public class Main {
+public class Main extends MutiThread {
 
-//    abstract static class TestNode {
+    public static String TEST_STATIC_VARIATION = "son's static variation";
+    public int testVar = 100;
+
+
+    public Main() {}
+
+    public Main(int a) {
+        this.testVar = a;
+    }
+
+    @Override
+    public int getTestVar() {
+        return testVar;
+    }
+
+    //    abstract static class TestNode {
 //        public TestNode prev;
 //    }
 //
 //    private static volatile TestNode head;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        System.out.println(MutiThread.GetBinaryExpression(1.1));
-        System.out.println(MutiThread.GetBinaryExpression(1.234242323));
+        // 多态在编译时，已经根据runtime的静态类型做了抹除
+        Main child = new Main(1998);
+        MutiThread parent = child;
+        System.out.println(parent.getTestVar());
+        System.out.println(parent.testStaticVar);
+        System.out.println(parent.testVar);
+        System.out.println(child.testVar);
+
+//        System.out.println(MutiThread.GetBinaryExpression(1.1F));
+//        System.out.println(MutiThread.GetBinaryExpression(1.234242323));
 
 //        ！！！type... 编译器会处理成type[]数组
 //        int res = MutiThread.max(1, 2,3,4);
